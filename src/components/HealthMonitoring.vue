@@ -44,28 +44,24 @@ export default {
 	},
 	computed: {
 		healthData() {
-			return this.$store.state.healthData;
+			return this.$store.state.dataModule.healthData;
 		},
 		titles() {
-			const titlesArray = this.$store.state.healthData.map(
-				(item) => item.tab
-			);
+			const titlesArray = this.healthData.map((item) => item.tab);
 			return titlesArray;
 		},
 		icons() {
-			const iconsArray = this.$store.state.healthData.map(
-				(item) => item.tab.icon
-			);
+			const iconsArray = this.healthData.map((item) => item.tab.icon);
 			return iconsArray;
 		},
 		takeChartDataLabels() {
-			const labels = this.$store.state.healthData
+			const labels = this.healthData
 				.find((item) => item.tab.id === this.barIndex)
 				.data.map((item) => item.month);
 			return labels;
 		},
 		takeChartDataNumbers() {
-			const numbers = this.$store.state.healthData
+			const numbers = this.healthData
 				.find((item) => item.tab.id === this.barIndex)
 				.data.map((item) => item.number);
 			return numbers;

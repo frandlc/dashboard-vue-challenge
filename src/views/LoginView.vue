@@ -7,14 +7,14 @@ export default {
 	data() {
 		return {};
 	},
-	methods: {
-		changeView(viewString) {
-			this.$store.dispatch(viewString);
-		},
-	},
 	computed: {
 		view() {
-			return this.$store.state.view;
+			return this.$store.state.authModule.view;
+		},
+	},
+	methods: {
+		changeView(viewString) {
+			this.$store.dispatch(`authModule/${viewString}`);
 		},
 	},
 	components: {

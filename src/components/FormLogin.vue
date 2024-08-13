@@ -19,7 +19,7 @@ export default {
 				password: this.pass,
 			};
 			try {
-				await this.$store.dispatch("LogIn", loginData);
+				await this.$store.dispatch("authModule/LogIn", loginData);
 				this.$router.push("/");
 				this.showError = false;
 			} catch (error) {
@@ -27,7 +27,7 @@ export default {
 			}
 		},
 		changeView() {
-			this.$store.dispatch(`changeViewForgotPassword`);
+			this.$store.dispatch(`authModule/changeViewForgotPassword`);
 		},
 	},
 };

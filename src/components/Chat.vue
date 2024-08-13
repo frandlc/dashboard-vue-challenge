@@ -5,7 +5,7 @@ export default {
 	},
 	computed: {
 		chatData() {
-			return this.$store.state.chatData;
+			return this.$store.state.dataModule.chatData;
 		},
 	},
 };

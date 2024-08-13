@@ -12,7 +12,7 @@ export default {
 	},
 	methods: {
 		logout() {
-			this.$store.dispatch("LogOut");
+			this.$store.dispatch("authModule/LogOut");
 			this.$router.push("/login");
 		},
 	},
@@ -21,7 +21,7 @@ export default {
 	},
 	computed: {
 		links() {
-			return this.$store.state.menu;
+			return this.$store.state.dataModule.menu;
 		},
 	},
 };

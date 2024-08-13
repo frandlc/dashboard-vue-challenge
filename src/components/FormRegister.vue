@@ -19,7 +19,7 @@ export default {
 				password: this.registerPass,
 			};
 			try {
-				await this.$store.dispatch("Register", postData);
+				await this.$store.dispatch("authModule/Register", postData);
 				this.$router.push("/");
 				this.errorMessage = false;
 			} catch (error) {

@@ -1,7 +1,7 @@
 <script>
 import userIcon from "../assets/imgs/user.png";
 
-function passwordRequest(postData) {
+async function passwordRequest(postData) {
 	setTimeout(() => {
 		console.log(postData);
 	}, 1000);

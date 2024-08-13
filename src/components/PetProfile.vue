@@ -30,7 +30,7 @@ export default {
 	},
 	computed: {
 		profileData() {
-			return this.$store.state.profileData;
+			return this.$store.state.dataModule.profileData;
 		},
 		chartDataActivity() {
 			return {

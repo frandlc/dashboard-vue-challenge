@@ -7,7 +7,7 @@ export default {
 	},
 	computed: {
 		appoitmentsData() {
-			return this.$store.state.appoitmentsData;
+			return this.$store.state.dataModule.appoitmentsData;
 		},
 	},
 };
