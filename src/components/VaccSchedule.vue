@@ -3,11 +3,29 @@ export default {
 	data() {
 		return {
 			filter: "",
+			search: "",
+			showAppointments: [],
 		};
 	},
 	computed: {
-		appoitmentsData() {
-			return this.$store.state.dataModule.appoitmentsData;
+		appointmentsData() {
+			return this.$store.state.dataModule.appointmentsData;
+		},
+		appointmentsFiltered() {
+			let filteredApp = [...this.appointmentsData];
+			if (!!this.filter && this.filter !== "All") {
+				filteredApp = filteredApp.filter(
+					(item) => item.type === this.filter
+				);
+			}
+			if (!!this.search.trim()) {
+				filteredApp = filteredApp.filter((item) =>
+					Object.values(item).some((v) =>
+						v.toLowerCase().includes(this.search.toLowerCase())
+					)
+				);
+			}
+			return filteredApp;
 		},
 	},
 };
@@ -25,6 +43,8 @@ export default {
 						type="text"
 						placeholder="search"
 						class="bg-transparent text-end focus:outline-none w-[150px]"
+						name="search"
+						v-model="search"
 					/>
 					<img
 						src="../assets/imgs/Search.png"
@@ -42,6 +62,7 @@ export default {
 					<option value="Overdue">Overdue</option>
 					<option value="Noncore">Noncore</option>
 					<option value="Core">Core</option>
+					<option value="All">All types</option>
 				</select>
 			</div>
 		</div>
@@ -54,11 +75,11 @@ export default {
 						<th class="text-left p-4">Name</th>
 						<th class="text-left p-4">Type</th>
 						<th class="text-left p-4">Date</th>
-						<th class="text-left p-4">Veterinar</th>
+						<th class="text-left p-4">Veterinarian</th>
 					</tr>
 				</thead>
 				<tr
-					v-for="(item, index) in appoitmentsData"
+					v-for="(item, index) in appointmentsFiltered"
 					:key="index + item.name"
 					class="p-4"
 				>

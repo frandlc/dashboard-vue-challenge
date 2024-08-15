@@ -1,5 +1,5 @@
 <script>
-import { Doughnut } from "vue-chartjs/legacy";
+import { Doughnut } from "vue-chartjs";
 
 import {
 	Chart as ChartJS,
@@ -15,16 +15,28 @@ ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
 export default {
 	data() {
 		return {
-			filterActivity: "Monthly",
-			filterSleep: "Monthly",
-			filterWelness: "Monthly",
-			chartId: "doughnut-chart",
-			datasetIdKey: "label",
-			width: { default: 200 },
-			height: { default: 200 },
+			filterActivity: "monthly",
+			filterSleep: "monthly",
+			filterWelness: "monthly",
+			width: 200,
+			height: 200,
 			chartOptions: {
-				responsive: true,
-				maintainAspectRatio: false,
+				// responsive: true,
+				maintainAspectRatio: true,
+				// borderRadius: {
+				// 	outerStart: 10,
+				// 	outerEnd: 10,
+				// 	innerStart: 10,
+				// 	innerEnd: 10,
+				// },
+				borderRadius: 10,
+				color: "#F2F5FA",
+				cutout: "85%",
+				clip: false,
+			},
+			styles: {
+				maxWidth: "80%",
+				minHeight: "80%",
 			},
 		};
 	},
@@ -39,8 +51,9 @@ export default {
 					{
 						backgroundColor: ["#E53761", "#F2F5FA"],
 						data: [
-							this.profileData.activity,
-							100 - this.profileData.activity,
+							this.profileData.activity[this.filterActivity],
+							100 -
+								this.profileData.activity[this.filterActivity],
 						],
 					},
 				],
@@ -53,8 +66,8 @@ export default {
 					{
 						backgroundColor: ["#27A468", "#F2F5FA"],
 						data: [
-							this.profileData.sleep,
-							100 - this.profileData.sleep,
+							this.profileData.sleep[this.filterSleep],
+							100 - this.profileData.sleep[this.filterSleep],
 						],
 					},
 				],
@@ -67,8 +80,8 @@ export default {
 					{
 						backgroundColor: ["#F2A735", "#F2F5FA"],
 						data: [
-							this.profileData.welness,
-							100 - this.profileData.welness,
+							this.profileData.welness[this.filterWelness],
+							100 - this.profileData.welness[this.filterWelness],
 						],
 					},
 				],
@@ -85,80 +98,110 @@ export default {
 	<section
 		class="w-full h-full grid grid-rows-1 grid-cols-3 gap-4 bg-gray-bg"
 	>
-		<div class="bg-white-primary p-4 rounded-2xl py-6 relative">
-			<div class="w-full flex justify-between items-center mb-6">
+		<div
+			class="bg-white-primary p-4 rounded-2xl py-6 relative flex flex-col justify-between"
+		>
+			<div class="w-full flex justify-between items-center">
 				<h2 class="uppercase">Activity</h2>
 				<select
 					name="filterActivity"
 					v-model="filterActivity"
 					class="border rounded-lg border-gray-borders bg-white px-2"
 				>
-					<option value="Monthly" selected>Monthly</option>
-					<option value="Weekly">Weekly</option>
-					<option value="Daily">Daily</option>
+					<option value="monthly" selected>Monthly</option>
+					<option value="weekly">Weekly</option>
+					<option value="daily">Daily</option>
 				</select>
 			</div>
-			<div class="absolute top-[65px] left-[30px] text-2xl font-bold">
-				{{ profileData.activity + "%" }}
+			<div class="w-full h-4/5 relative">
+				<div
+					class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl font-semibold"
+				>
+					{{ profileData.activity[filterActivity] + "%" }}
+				</div>
+				<div
+					class="absolute top-1/2 left-1/2 transform -translate-x-[53%] -translate-y-[53%] flex-1 w-full h-full flex justify-center items-center"
+				>
+					<Doughnut
+						:chartData="chartDataActivity"
+						:chartOptions="chartOptions"
+						chartId="activity"
+						:width="width"
+						:height="height"
+						:styles="styles"
+					/>
+				</div>
 			</div>
-			<Doughnut
-				:chartData="chartDataActivity"
-				:chart-options="chartOptions"
-				:chart-id="chartId"
-				:dataset-id-key="datasetIdKey"
-				:width="width"
-				:height="height"
-			/>
 		</div>
-		<div class="bg-white-primary p-4 rounded-2xl py-6 relative">
-			<div class="w-full flex justify-between items-center mb-6">
+		<div
+			class="bg-white-primary p-4 rounded-2xl py-6 relative flex flex-col justify-between"
+		>
+			<div class="w-full flex justify-between items-center">
 				<h2 class="uppercase">sleep</h2>
 				<select
 					name="filterSleep"
 					v-model="filterSleep"
 					class="border rounded-lg border-gray-borders bg-white px-2"
 				>
-					<option value="Monthly" selected>Monthly</option>
-					<option value="Weekly">Weekly</option>
-					<option value="Daily">Daily</option>
+					<option value="monthly" selected>Monthly</option>
+					<option value="weekly">Weekly</option>
+					<option value="daily">Daily</option>
 				</select>
 			</div>
-			<div class="absolute top-[65px] left-[30px] text-2xl font-bold">
-				{{ profileData.sleep + "%" }}
+			<div class="w-full h-4/5 relative">
+				<div
+					class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl font-semibold"
+				>
+					{{ profileData.sleep[filterSleep] + "%" }}
+				</div>
+				<div
+					class="absolute top-1/2 left-1/2 transform -translate-x-[53%] -translate-y-[53%] flex-1 w-full h-full flex justify-center items-center"
+				>
+					<Doughnut
+						:chartData="chartDataSleep"
+						:chartOptions="chartOptions"
+						chartId="sleep"
+						:width="width"
+						:height="height"
+						:styles="styles"
+					/>
+				</div>
 			</div>
-			<Doughnut
-				:chartData="chartDataSleep"
-				:chart-options="chartOptions"
-				:chart-id="chartId"
-				:dataset-id-key="datasetIdKey"
-				:width="width"
-				:height="height"
-			/>
 		</div>
-		<div class="bg-white-primary p-4 rounded-2xl py-6 relative">
-			<div class="w-full flex justify-between items-center mb-6">
+		<div
+			class="bg-white-primary p-4 rounded-2xl py-6 relative flex flex-col justify-between"
+		>
+			<div class="w-full flex justify-between items-center">
 				<h2 class="uppercase">welness</h2>
 				<select
 					name="filterWelness"
 					v-model="filterWelness"
 					class="border rounded-lg border-gray-borders bg-white px-2"
 				>
-					<option value="Monthly" selected>Monthly</option>
-					<option value="Weekly">Weekly</option>
-					<option value="Daily">Daily</option>
+					<option value="monthly" selected>Monthly</option>
+					<option value="weekly">Weekly</option>
+					<option value="daily">Daily</option>
 				</select>
 			</div>
-			<div class="absolute top-[65px] left-[30px] text-2xl font-bold">
-				{{ profileData.welness + "%" }}
+			<div class="w-full h-4/5 relative">
+				<div
+					class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl font-semibold"
+				>
+					{{ profileData.welness[filterWelness] + "%" }}
+				</div>
+				<div
+					class="absolute top-1/2 left-1/2 transform -translate-x-[53%] -translate-y-[53%] flex-1 w-full h-full flex justify-center items-center"
+				>
+					<Doughnut
+						:chartData="chartDataWelness"
+						:chartOptions="chartOptions"
+						chartId="welness"
+						:width="width"
+						:height="height"
+						:styles="styles"
+					/>
+				</div>
 			</div>
-			<Doughnut
-				:chartData="chartDataWelness"
-				:chart-options="chartOptions"
-				:chart-id="chartId"
-				:dataset-id-key="datasetIdKey"
-				:width="width"
-				:height="height"
-			/>
 		</div>
 	</section>
 </template>

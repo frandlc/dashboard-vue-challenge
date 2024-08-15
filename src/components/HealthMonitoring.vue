@@ -25,7 +25,7 @@ ChartJS.register(
 export default {
 	data() {
 		return {
-			filter: "Monthly",
+			filter: "monthly",
 			chartOptions: {
 				responsive: true,
 				maintainAspectRatio: false,
@@ -57,13 +57,13 @@ export default {
 		takeChartDataLabels() {
 			const labels = this.healthData
 				.find((item) => item.tab.id === this.barIndex)
-				.data.map((item) => item.month);
+				.data[this.filter].map((item) => item.time);
 			return labels;
 		},
 		takeChartDataNumbers() {
 			const numbers = this.healthData
 				.find((item) => item.tab.id === this.barIndex)
-				.data.map((item) => item.number);
+				.data[this.filter].map((item) => item.number);
 			return numbers;
 		},
 		chartData() {
@@ -96,9 +96,9 @@ export default {
 				v-model="filter"
 				class="border rounded-lg border-gray-borders bg-white px-2"
 			>
-				<option value="Monthly" selected>Monthly</option>
-				<option value="Weekly">Weekly</option>
-				<option value="Daily">Daily</option>
+				<option value="monthly" selected>Monthly</option>
+				<option value="weekly">Weekly</option>
+				<option value="daily">Daily</option>
 			</select>
 		</div>
 		<div

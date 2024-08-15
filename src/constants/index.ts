@@ -75,99 +75,271 @@ export const schedule = [
 ];
 
 export const petProfile = {
-	activity: 25,
-	sleep: 79,
-	welness: 52,
+	activity: {
+		daily: 75,
+		weekly: 50,
+		monthly: 25,
+	},
+	sleep: {
+		daily: 59,
+		weekly: 39,
+		monthly: 79,
+	},
+	welness: {
+		daily: 22,
+		weekly: 82,
+		monthly: 52,
+	},
 };
 
 export const HealthMonitoring = [
 	{
 		tab: { title: "Stress level", icon: heartIcon, id: 1 },
-		data: [
-			{
-				month: "September",
-				number: 1,
-			},
-			{
-				month: "November",
-				number: 6,
-			},
+		data: {
+			monthly: [
+				{
+					time: "September",
+					number: 1,
+				},
+				{
+					time: "November",
+					number: 6,
+				},
 
-			{
-				month: "December",
-				number: 4,
-			},
-			{
-				month: "January",
-				number: 9,
-			},
-		],
+				{
+					time: "December",
+					number: 4,
+				},
+				{
+					time: "January",
+					number: 9,
+				},
+			],
+			weekly: [
+				{
+					time: "Monday",
+					number: 9,
+				},
+				{
+					time: "Tuesday",
+					number: 4,
+				},
+
+				{
+					time: "Wednesday",
+					number: 6,
+				},
+				{
+					time: "Thursday",
+					number: 1,
+				},
+			],
+			daily: [
+				{
+					time: "06:00",
+					number: 6,
+				},
+				{
+					time: "12:00",
+					number: 9,
+				},
+
+				{
+					time: "18:00",
+					number: 1,
+				},
+				{
+					time: "00:00",
+					number: 4,
+				},
+			],
+		},
 	},
 	{
 		tab: { title: "Pulse", icon: pulseIcon, id: 2 },
-		data: [
-			{
-				month: "September",
-				number: 9,
-			},
-			{
-				month: "November",
-				number: 3,
-			},
+		data: {
+			monthly: [
+				{
+					time: "September",
+					number: 9,
+				},
+				{
+					time: "November",
+					number: 3,
+				},
 
-			{
-				month: "December",
-				number: 5,
-			},
-			{
-				month: "January",
-				number: 7,
-			},
-		],
+				{
+					time: "December",
+					number: 5,
+				},
+				{
+					time: "January",
+					number: 7,
+				},
+			],
+			weekly: [
+				{
+					time: "Monday",
+					number: 7,
+				},
+				{
+					time: "Tuesday",
+					number: 5,
+				},
+
+				{
+					time: "Wednesday",
+					number: 3,
+				},
+				{
+					time: "Thursday",
+					number: 9,
+				},
+			],
+			daily: [
+				{
+					time: "06:00",
+					number: 3,
+				},
+				{
+					time: "12:00",
+					number: 9,
+				},
+
+				{
+					time: "18:00",
+					number: 5,
+				},
+				{
+					time: "00:00",
+					number: 7,
+				},
+			],
+		},
 	},
 	{
 		tab: { title: "Temperature", icon: temperatureIcon, id: 3 },
-		data: [
-			{
-				month: "September",
-				number: 7,
-			},
-			{
-				month: "November",
-				number: 4,
-			},
+		data: {
+			monthly: [
+				{
+					time: "September",
+					number: 7,
+				},
+				{
+					time: "November",
+					number: 4,
+				},
 
-			{
-				month: "December",
-				number: 2,
-			},
-			{
-				month: "January",
-				number: 1,
-			},
-		],
+				{
+					time: "December",
+					number: 2,
+				},
+				{
+					time: "January",
+					number: 1,
+				},
+			],
+			weekly: [
+				{
+					time: "Monday",
+					number: 1,
+				},
+				{
+					time: "Tuesday",
+					number: 2,
+				},
+
+				{
+					time: "Wednesday",
+					number: 4,
+				},
+				{
+					time: "Thursday",
+					number: 7,
+				},
+			],
+			daily: [
+				{
+					time: "06:00",
+					number: 4,
+				},
+				{
+					time: "12:00",
+					number: 7,
+				},
+
+				{
+					time: "18:00",
+					number: 2,
+				},
+				{
+					time: "00:00",
+					number: 1,
+				},
+			],
+		},
 	},
 	{
 		tab: { title: "Calories burned", icon: caloriesIcon, id: 4 },
-		data: [
-			{
-				month: "September",
-				number: 7,
-			},
-			{
-				month: "November",
-				number: 3,
-			},
+		data: {
+			monthly: [
+				{
+					time: "September",
+					number: 7,
+				},
+				{
+					time: "November",
+					number: 3,
+				},
 
-			{
-				month: "December",
-				number: 9,
-			},
-			{
-				month: "January",
-				number: 5,
-			},
-		],
+				{
+					time: "December",
+					number: 9,
+				},
+				{
+					time: "January",
+					number: 5,
+				},
+			],
+			weekly: [
+				{
+					time: "Monday",
+					number: 5,
+				},
+				{
+					time: "Tuesday",
+					number: 9,
+				},
+
+				{
+					time: "Wednesday",
+					number: 3,
+				},
+				{
+					time: "Thursday",
+					number: 7,
+				},
+			],
+			daily: [
+				{
+					time: "06:00",
+					number: 3,
+				},
+				{
+					time: "12:00",
+					number: 7,
+				},
+
+				{
+					time: "18:00",
+					number: 9,
+				},
+				{
+					time: "00:00",
+					number: 5,
+				},
+			],
+		},
 	},
 ];
 

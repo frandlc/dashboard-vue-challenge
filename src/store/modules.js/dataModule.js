@@ -11,7 +11,7 @@ export const dataModule = {
 		healthData: HealthMonitoring,
 		chatData: chat,
 		menu: navLinks,
-		appoitmentsData: schedule,
+		appointmentsData: schedule,
 		profileData: petProfile,
 	}),
 };
