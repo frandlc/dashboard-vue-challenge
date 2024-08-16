@@ -1,11 +1,12 @@
 <script>
-import { Line as LineChartGenerator } from "vue-chartjs/legacy";
+import { Line as LineChartGenerator } from "vue-chartjs";
 
 import {
 	Chart as ChartJS,
 	Title,
 	Tooltip,
 	Legend,
+	Filler,
 	LineElement,
 	LinearScale,
 	CategoryScale,
@@ -16,6 +17,7 @@ ChartJS.register(
 	Title,
 	Tooltip,
 	Legend,
+	Filler,
 	LineElement,
 	LinearScale,
 	CategoryScale,
@@ -29,11 +31,45 @@ export default {
 			chartOptions: {
 				responsive: true,
 				maintainAspectRatio: false,
+				pointBorderColor: "#3788E5",
+				pointBackgroundColor: "#3788E5",
+				pointRadius: 0,
+				backgroundColor: "#3788E5",
+				borderColor: "#3788E5",
+				borderWidth: 2,
+				scales: {
+					y: {
+						min: 1,
+						max: 10,
+						grid: {
+							borderDash: [10],
+							drawTicks: false,
+							drawBorder: false,
+						},
+						ticks: {
+							padding: 25,
+						},
+					},
+					x: {
+						grid: {
+							display: false,
+						},
+						ticks: {
+							count: 4,
+						},
+					},
+				},
+				plugins: {
+					legend: {
+						display: false,
+					},
+				},
+			},
+			styles: {
+				width: "100%",
+				height: "100%",
 			},
 			chartId: "line-chart",
-			datasetIdKey: "label",
-			width: 830,
-			height: 300,
 			barIndex: 1,
 		};
 	},
@@ -55,15 +91,17 @@ export default {
 			return iconsArray;
 		},
 		takeChartDataLabels() {
-			const labels = this.healthData
-				.find((item) => item.tab.id === this.barIndex)
-				.data[this.filter].map((item) => item.time);
+			const labels = this.healthData.find(
+				(item) => item.tab.id === this.barIndex
+			).data[this.filter].labels;
+			// .data[this.filter].map((item) => item.time);
 			return labels;
 		},
 		takeChartDataNumbers() {
-			const numbers = this.healthData
-				.find((item) => item.tab.id === this.barIndex)
-				.data[this.filter].map((item) => item.number);
+			const numbers = this.healthData.find(
+				(item) => item.tab.id === this.barIndex
+			).data[this.filter].numbers;
+			// .data[this.filter].map((item) => item.number);
 			return numbers;
 		},
 		chartData() {
@@ -72,7 +110,8 @@ export default {
 				datasets: [
 					{
 						label: "",
-						backgroundColor: "#f87979",
+						backgroundColor: "rgba(55,136,229,0.25)",
+						fill: true,
 						data: this.takeChartDataNumbers,
 					},
 				],
@@ -119,14 +158,13 @@ export default {
 				{{ item.title }}
 			</button>
 		</div>
-		<div>
+		<div class="w-full h-[80%]">
 			<LineChartGenerator
-				:chart-options="chartOptions"
-				:chart-data="chartData"
-				:chart-id="chartId"
-				:dataset-id-key="datasetIdKey"
-				:width="width"
-				:height="height"
+				:chartOptions="chartOptions"
+				:chartData="chartData"
+				chart-id="chartId"
+				:styles="styles"
+				ref="canvas"
 			/>
 		</div>
 	</section>

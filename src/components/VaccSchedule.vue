@@ -92,11 +92,11 @@ export default {
 							class="w-full"
 							:class="
 								value === `Core`
-									? `px-3 py-1 rounded-lg border border-[#BDE8D3] bg-[#EAF8F1] text-[#27A468] `
+									? `px-3 py-1 rounded-lg border border-[#BDE8D3] bg-[#EAF8F1] text-[#27A468] block text-center w-full`
 									: value === `Noncore`
-									? `px-3 py-1 rounded-lg border border-[#F7E1C1] bg-[#FCF5EB] text-[#F2A735]`
+									? `px-3 py-1 rounded-lg border border-[#F7E1C1] bg-[#FCF5EB] text-[#F2A735] block text-center w-full`
 									: value === `Overdue`
-									? `px-3 py-1 rounded-lg border border-[#F7C1CE] bg-[#FCEBEF] text-[#D03258]`
+									? `px-3 py-1 rounded-lg border border-[#F7C1CE] bg-[#FCEBEF] text-[#D03258] block text-center w-full`
 									: ``
 							"
 						>

@@ -96,249 +96,153 @@ export const HealthMonitoring = [
 	{
 		tab: { title: "Stress level", icon: heartIcon, id: 1 },
 		data: {
-			monthly: [
-				{
-					time: "September",
-					number: 1,
-				},
-				{
-					time: "November",
-					number: 6,
-				},
-
-				{
-					time: "December",
-					number: 4,
-				},
-				{
-					time: "January",
-					number: 9,
-				},
-			],
-			weekly: [
-				{
-					time: "Monday",
-					number: 9,
-				},
-				{
-					time: "Tuesday",
-					number: 4,
-				},
-
-				{
-					time: "Wednesday",
-					number: 6,
-				},
-				{
-					time: "Thursday",
-					number: 1,
-				},
-			],
-			daily: [
-				{
-					time: "06:00",
-					number: 6,
-				},
-				{
-					time: "12:00",
-					number: 9,
-				},
-
-				{
-					time: "18:00",
-					number: 1,
-				},
-				{
-					time: "00:00",
-					number: 4,
-				},
-			],
+			monthly: {
+				labels: [
+					"September",
+					"October",
+					"November",
+					"December",
+					"January",
+					"February",
+					"March",
+					"April",
+					"May",
+					"June",
+					"July",
+					"August",
+				],
+				numbers: [4, 7, 6, 7, 4, 7, 8, 3, 7, 2, 7, 2],
+			},
+			weekly: {
+				labels: [
+					"Monday",
+					"Tuesday",
+					"Wednesday",
+					"Thursday",
+					"Friday",
+					"Saturday",
+					"Sunday",
+				],
+				numbers: [5, 3, 5, 7, 8, 3, 6],
+			},
+			daily: {
+				labels: ["06:00", "12:00", "18:00", "00:00"],
+				numbers: [5, 6, 2, 7],
+			},
 		},
 	},
 	{
 		tab: { title: "Pulse", icon: pulseIcon, id: 2 },
 		data: {
-			monthly: [
-				{
-					time: "September",
-					number: 9,
-				},
-				{
-					time: "November",
-					number: 3,
-				},
-
-				{
-					time: "December",
-					number: 5,
-				},
-				{
-					time: "January",
-					number: 7,
-				},
-			],
-			weekly: [
-				{
-					time: "Monday",
-					number: 7,
-				},
-				{
-					time: "Tuesday",
-					number: 5,
-				},
-
-				{
-					time: "Wednesday",
-					number: 3,
-				},
-				{
-					time: "Thursday",
-					number: 9,
-				},
-			],
-			daily: [
-				{
-					time: "06:00",
-					number: 3,
-				},
-				{
-					time: "12:00",
-					number: 9,
-				},
-
-				{
-					time: "18:00",
-					number: 5,
-				},
-				{
-					time: "00:00",
-					number: 7,
-				},
-			],
+			monthly: {
+				labels: [
+					"September",
+					"October",
+					"November",
+					"December",
+					"January",
+					"February",
+					"March",
+					"April",
+					"May",
+					"June",
+					"July",
+					"August",
+				],
+				numbers: [9, 3, 5, 7, 4, 6, 4, 5, 8, 3, 7, 2],
+			},
+			weekly: {
+				labels: [
+					"Monday",
+					"Tuesday",
+					"Wednesday",
+					"Thursday",
+					"Friday",
+					"Saturday",
+					"Sunday",
+				],
+				numbers: [4, 5, 5, 7, 3, 5, 7],
+			},
+			daily: {
+				labels: ["06:00", "12:00", "18:00", "00:00"],
+				numbers: [3, 8, 9, 3],
+			},
 		},
 	},
 	{
 		tab: { title: "Temperature", icon: temperatureIcon, id: 3 },
 		data: {
-			monthly: [
-				{
-					time: "September",
-					number: 7,
-				},
-				{
-					time: "November",
-					number: 4,
-				},
-
-				{
-					time: "December",
-					number: 2,
-				},
-				{
-					time: "January",
-					number: 1,
-				},
-			],
-			weekly: [
-				{
-					time: "Monday",
-					number: 1,
-				},
-				{
-					time: "Tuesday",
-					number: 2,
-				},
-
-				{
-					time: "Wednesday",
-					number: 4,
-				},
-				{
-					time: "Thursday",
-					number: 7,
-				},
-			],
-			daily: [
-				{
-					time: "06:00",
-					number: 4,
-				},
-				{
-					time: "12:00",
-					number: 7,
-				},
-
-				{
-					time: "18:00",
-					number: 2,
-				},
-				{
-					time: "00:00",
-					number: 1,
-				},
-			],
+			monthly: {
+				labels: [
+					"September",
+					"October",
+					"November",
+					"December",
+					"January",
+					"February",
+					"March",
+					"April",
+					"May",
+					"June",
+					"July",
+					"August",
+				],
+				numbers: [2, 1, 9, 7, 4, 7, 3, 7, 8, 3, 7, 2],
+			},
+			weekly: {
+				labels: [
+					"Monday",
+					"Tuesday",
+					"Wednesday",
+					"Thursday",
+					"Friday",
+					"Saturday",
+					"Sunday",
+				],
+				numbers: [8, 1, 5, 7, 2, 2, 4],
+			},
+			daily: {
+				labels: ["06:00", "12:00", "18:00", "00:00"],
+				numbers: [8, 9, 5, 3],
+			},
 		},
 	},
 	{
 		tab: { title: "Calories burned", icon: caloriesIcon, id: 4 },
 		data: {
-			monthly: [
-				{
-					time: "September",
-					number: 7,
-				},
-				{
-					time: "November",
-					number: 3,
-				},
-
-				{
-					time: "December",
-					number: 9,
-				},
-				{
-					time: "January",
-					number: 5,
-				},
-			],
-			weekly: [
-				{
-					time: "Monday",
-					number: 5,
-				},
-				{
-					time: "Tuesday",
-					number: 9,
-				},
-
-				{
-					time: "Wednesday",
-					number: 3,
-				},
-				{
-					time: "Thursday",
-					number: 7,
-				},
-			],
-			daily: [
-				{
-					time: "06:00",
-					number: 3,
-				},
-				{
-					time: "12:00",
-					number: 7,
-				},
-
-				{
-					time: "18:00",
-					number: 9,
-				},
-				{
-					time: "00:00",
-					number: 5,
-				},
-			],
+			monthly: {
+				labels: [
+					"September",
+					"October",
+					"November",
+					"December",
+					"January",
+					"February",
+					"March",
+					"April",
+					"May",
+					"June",
+					"July",
+					"August",
+				],
+				numbers: [8, 2, 1, 7, 4, 7, 4, 3, 7, 8, 7, 8],
+			},
+			weekly: {
+				labels: [
+					"Monday",
+					"Tuesday",
+					"Wednesday",
+					"Thursday",
+					"Friday",
+					"Saturday",
+					"Sunday",
+				],
+				numbers: [9, 3, 5, 7, 7, 4, 7],
+			},
+			daily: {
+				labels: ["06:00", "12:00", "18:00", "00:00"],
+				numbers: [9, 3, 5, 7],
+			},
 		},
 	},
 ];

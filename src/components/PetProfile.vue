@@ -21,14 +21,7 @@ export default {
 			width: 200,
 			height: 200,
 			chartOptions: {
-				// responsive: true,
 				maintainAspectRatio: true,
-				// borderRadius: {
-				// 	outerStart: 10,
-				// 	outerEnd: 10,
-				// 	innerStart: 10,
-				// 	innerEnd: 10,
-				// },
 				borderRadius: 10,
 				color: "#F2F5FA",
 				cutout: "85%",

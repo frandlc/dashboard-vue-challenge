@@ -47,8 +47,14 @@ export default {
 					</div>
 				</div>
 			</div>
-			<div>
+			<div class="flex flex-col justify-center items-center">
 				<p class="text-right">{{ item.date }}</p>
+				<p
+					v-if="index === 1"
+					class="text-white rounded bg-pink-secondary text-center text-sm w-5"
+				>
+					2
+				</p>
 			</div>
 		</div>
 	</section>

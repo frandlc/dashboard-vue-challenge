@@ -19,7 +19,7 @@ const props = defineProps<Props>();
 		<div
 			v-for="item in props.item.links"
 			:key="item.slug"
-			class="flex gap-2 p-2 hover:bg-blue-primary rounded-lg hover:text-white-primary"
+			class="flex gap-2 p-2 hover:bg-blue-primary rounded-lg hover:text-white-primary relative"
 		>
 			<img
 				:src="item.logo"
@@ -29,6 +29,12 @@ const props = defineProps<Props>();
 			/><router-link class="capitalize" :to="item.slug">{{
 				item.subItem
 			}}</router-link>
+			<p
+				v-if="item.slug === `/appointments`"
+				class="text-white rounded bg-pink-secondary text-center text-sm w-5 absolute right-0 top-[10px]"
+			>
+				2
+			</p>
 		</div>
 	</div>
 </template>
