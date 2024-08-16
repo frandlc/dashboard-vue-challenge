@@ -20,12 +20,8 @@ I think the project is incomplete in some ways like the mock of the http request
 
 ## Project Setup
 
-Este projecto necesita la --force flag porque hay diferencias de versiones en el paquete, como usa chartjs actualizado para vue3 pero en este projecto usamos un modulo legacy que ellos proveen la dependencia queda en offside
-
-This needs the --force flag because the installer of the graph library has some dependencies errors with the legacy mode for Vue 2
-
 ```sh
-npm install --force
+npm install
 ```
 
 ### Compile and Hot-Reload for Development
@@ -38,10 +34,4 @@ npm run dev
 
 ```sh
 npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
