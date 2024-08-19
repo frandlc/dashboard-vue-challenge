@@ -35,3 +35,5 @@ npm run dev
 ```sh
 npm run build
 ```
+
+You are invited to see my other project in this github account, i'm growing as a developer and trying to do more personal projects and not just work hehe
