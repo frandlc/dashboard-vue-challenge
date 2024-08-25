@@ -1,14 +1,5 @@
-const login = async (params) =>
-	setTimeout(() => {
-		console.log(params, "login");
-		return params.email;
-	}, 1000);
-
-const register = async (params) =>
-	setTimeout(() => {
-		console.log(params, "register");
-		return params;
-	}, 1000);
+import { login } from "../../utils/login";
+import { register } from "../../utils/register";
 
 export const authModule = {
 	namespaced: true,
