@@ -33,7 +33,7 @@ export default {
 				class="relative w-full flex justify-between items-center p-4 border-b z-10 bg-white"
 			>
 				<div
-					class="w-1/2 p-4 border border-gray-borders rounded-xl flex justify-start items-center py-2"
+					class="w-[59.7%] p-4 border border-gray-borders rounded-xl flex justify-start items-center py-2"
 				>
 					<img
 						:src="search"
