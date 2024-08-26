@@ -4,8 +4,8 @@ import help from "../assets/imgs/help.png";
 import search from "../assets/imgs/Search.png";
 import Chat from "../components/Chat.vue";
 import HealthMonitoring from "../components/HealthMonitoring.vue";
+import Layout from "../components/Layout.vue";
 import PetProfile from "../components/PetProfile.vue";
-import SidebarView from "../components/Sidebar.vue";
 import VaccSchedule from "../components/VaccSchedule.vue";
 
 export default {
@@ -17,18 +17,17 @@ export default {
 		};
 	},
 	components: {
-		SidebarView,
 		Chat,
 		VaccSchedule,
 		HealthMonitoring,
 		PetProfile,
+		Layout,
 	},
 };
 </script>
 <template>
 	<div class="w-full">
-		<SidebarView />
-		<main class="ml-[310px]">
+		<Layout>
 			<header
 				class="relative w-full flex justify-between items-center p-4 border-b z-10 bg-white"
 			>
@@ -86,6 +85,6 @@ export default {
 					<Chat />
 				</div>
 			</div>
-		</main>
+		</Layout>
 	</div>
 </template>

@@ -29,7 +29,7 @@ export default {
 
 <template>
 	<nav
-		class="w-[310px] h-screen px-6 py-4 flex flex-col justify-between items-center border-r fixed top-0 left-0"
+		class="w-[310px] h-screen px-6 py-4 flex flex-col justify-between items-center border-r"
 	>
 		<div class="w-full flex justify-start items-center gap-2 p-2 pl-4">
 			<img :src="logo" alt="Pet care logo" width="24px" height="24px" />
