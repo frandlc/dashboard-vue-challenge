@@ -92,9 +92,9 @@ export default {
 		class="w-full h-full grid grid-rows-1 grid-cols-3 gap-4 bg-gray-bg"
 	>
 		<div
-			class="bg-white-primary p-4 rounded-2xl py-6 relative flex flex-col justify-between"
+			class="bg-white-primary px-4 rounded-2xl py-6 relative flex flex-col justify-between"
 		>
-			<div class="w-full flex justify-between items-center">
+			<div class="w-full flex justify-between items-center px-4">
 				<h2 class="uppercase">Activity</h2>
 				<select
 					name="filterActivity"
@@ -127,9 +127,9 @@ export default {
 			</div>
 		</div>
 		<div
-			class="bg-white-primary p-4 rounded-2xl py-6 relative flex flex-col justify-between"
+			class="bg-white-primary px-4 rounded-2xl py-6 relative flex flex-col justify-between"
 		>
-			<div class="w-full flex justify-between items-center">
+			<div class="w-full flex justify-between items-center px-4">
 				<h2 class="uppercase">sleep</h2>
 				<select
 					name="filterSleep"
@@ -162,9 +162,9 @@ export default {
 			</div>
 		</div>
 		<div
-			class="bg-white-primary p-4 rounded-2xl py-6 relative flex flex-col justify-between"
+			class="bg-white-primary px-4 rounded-2xl py-6 relative flex flex-col justify-between"
 		>
-			<div class="w-full flex justify-between items-center">
+			<div class="w-full flex justify-between items-center px-4">
 				<h2 class="uppercase">welness</h2>
 				<select
 					name="filterWelness"

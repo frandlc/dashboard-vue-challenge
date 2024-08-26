@@ -10,6 +10,10 @@ import heartIcon from "../assets/imgs/heart.png";
 import pulseIcon from "../assets/imgs/Pulse.png";
 import temperatureIcon from "../assets/imgs/temperature.png";
 import caloriesIcon from "../assets/imgs/calories.png";
+import helenAvatar from "../assets/imgs/helen-avatar.png";
+import kathrynAvatar from "../assets/imgs/kathryn-avatar.png";
+import jamesAvatar from "../assets/imgs/james-avatar.png";
+import jimAvatar from "../assets/imgs/jim-avatar.png";
 
 type NavLinks = Array<{
 	title: string;
@@ -21,6 +25,7 @@ export const chat = [
 	{
 		itWasRead: false,
 		avatar: "Helen Brooks",
+		imgUrl: helenAvatar,
 		messages:
 			"Luna has been scratching her ears a lot lately and shaking her head. I checked her ears and they look red and inflamed. She also seems to be in pain when I touch them.",
 		date: "15:56",
@@ -28,6 +33,7 @@ export const chat = [
 	{
 		itWasRead: false,
 		avatar: "Kathryn Murphy",
+		imgUrl: kathrynAvatar,
 		messages:
 			"The best way to treat an ear infection is to visit your local vet clinic and get a prescription for ear drops. The ear drops will help clear the infection and reduce th",
 		date: "Wed",
@@ -35,6 +41,7 @@ export const chat = [
 	{
 		itWasRead: true,
 		avatar: "James Grey",
+		imgUrl: jamesAvatar,
 		messages:
 			"You should follow the instructions on the ear drops label, but usually you need to apply them twice a day for 7 to 10 days. You should clean her ears once a day, preferably before applying the ear drops",
 		date: "Tue",
@@ -42,6 +49,7 @@ export const chat = [
 	{
 		itWasRead: true,
 		avatar: "Jim Brown",
+		imgUrl: jimAvatar,
 		messages: "Hi, I have a question about my cat.",
 		date: "Tue",
 	},
