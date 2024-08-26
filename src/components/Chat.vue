@@ -51,7 +51,7 @@ export default {
 							/>
 						</div>
 						<div class="p-4 pt-0 pr-0 h-12 overflow-hidden w-full">
-							<h4>{{ item.avatar }}</h4>
+							<h4 class="font-medium">{{ item.avatar }}</h4>
 							<p class="text-sm truncate">{{ item.messages }}</p>
 						</div>
 					</div>

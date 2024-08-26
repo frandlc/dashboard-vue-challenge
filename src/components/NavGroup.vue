@@ -29,13 +29,13 @@ export default {
 			}}</router-link>
 			<p
 				v-if="item.slug === `/appointments`"
-				class="text-white rounded bg-pink-secondary text-center text-sm w-5 absolute right-0 top-[10px]"
+				class="text-white rounded bg-pink-secondary text-center text-sm w-5 absolute right-0 top-[10px] mr-2"
 			>
 				2
 			</p>
 			<div
 				v-if="item.slug === `/chat`"
-				class="flex absolute right-0 top-[5px]"
+				class="flex absolute right-0 top-[7px] pr-2"
 			>
 				<img
 					v-for="img in chatDataImgs"
