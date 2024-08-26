@@ -110,7 +110,23 @@ export default {
 				datasets: [
 					{
 						label: "",
-						backgroundColor: "rgba(55,136,229,0.25)",
+						backgroundColor: (ctx) => {
+							const canvas = ctx.chart.ctx;
+							const gradient = canvas.createLinearGradient(
+								0,
+								0,
+								0,
+								340
+							);
+
+							gradient.addColorStop(
+								0,
+								"rgba(55, 136, 229, 0.30)"
+							);
+							gradient.addColorStop(1, "rgba(55, 136, 229, 0)");
+
+							return gradient;
+						},
 						fill: true,
 						data: this.takeChartDataNumbers,
 					},
@@ -162,9 +178,8 @@ export default {
 			<LineChartGenerator
 				:chartOptions="chartOptions"
 				:chartData="chartData"
-				chart-id="chartId"
+				:chart-id="chartId"
 				:styles="styles"
-				ref="canvas"
 			/>
 		</div>
 	</section>
